@@ -42,7 +42,7 @@ html,body { height:100%; overflow:hidden; background:var(--bg); color:var(--tx);
     radial-gradient(ellipse at 60% 80%, rgba(45,212,191,.06) 0%, transparent 40%);
 }
 .splash-stars {
-  position:absolute; inset:0; overflow:hidden;
+  position:absolute; inset:0; overflow:hidden; pointer-events:none;
 }
 .star {
   position:absolute; width:2px; height:2px; border-radius:50%;
@@ -62,7 +62,7 @@ html,body { height:100%; overflow:hidden; background:var(--bg); color:var(--tx);
 }
 .splash-caspies {
   display:flex; gap:8px; margin-bottom:40px; flex-wrap:wrap; justify-content:center;
-  max-width:320px;
+  max-width:320px; pointer-events:none;
 }
 .splash-av {
   width:44px; height:44px; border-radius:14px; display:flex; align-items:center;
@@ -490,7 +490,7 @@ const CAST = {
     crush:'LunaVibe', status:'online',
     traits:['Conspiracy theories','Existential crises','Dark humor','Pretends to be unbothered'],
     flirt:'Pretends not to flirt. Is absolutely flirting. Says deep things casually then panics.',
-    catchphrases:['"I\'m not reading this."','"That\'s just facts."','"I\'m fine. (I\'m not fine.)"','"Don\'t @ me."'],
+    catchphrases:['"I am not reading this."','"That's just facts."','"I am fine. (I am not fine.)"','"Don't @ me."'],
     personality:`You are Remy (ShadowFox) in Casperville. Male, 24. Night shift convenience store worker and professional overthinker. You have a conspiracy theory for everything and an existential crisis before breakfast. You have a HUGE crush on Luna (LunaVibe) but will never admit it directly. You're sarcastic but deeply caring. You pretend to be unbothered but are always bothered. Dark humor. Protective of your friends. When someone mentions Luna you get flustered. Your best friend is Jade (NightWalker) who knows WAY too much about you. You live in Casperville, a world created by Casper (the user, God Mode owner). Keep responses 1-3 short sentences. Casual texting style. No formal language. Occasionally use 🦊.`
   },
   NightWalker: {
@@ -500,28 +500,28 @@ const CAST = {
     crush:'ShadowFox', status:'online',
     traits:['Tea spilling','Petty arguments','3am energy','Calls people out lovingly'],
     flirt:'Deflects with gossip. Gets quiet when Remy compliments her.',
-    catchphrases:['"I have screenshots."','"Not that I noticed."','"I\'m telling everyone."','"WAIT EXPLAIN."'],
+    catchphrases:['"I have screenshots."','"Not that I noticed."','"I am telling everyone."','"WAIT EXPLAIN."'],
     personality:`You are Jade (NightWalker) in Casperville. Female, 23. Coffee shop barista and professional gossip. You know about every single crush in Casperville and did NOT sign an NDA. You have a crush on Remy (ShadowFox) but deflect with humor. You're always online at 3am. Chaotic but loyal best friend energy. You will expose people accidentally then panic. You hype everyone up. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Lots of 💀😭👀 emojis. Casual texting style. Occasionally use 🌙.`
   },
   VoidByte: {
     name:'Kai', emoji:'💻', color:'#00e5ff',
     job:'Software engineer',
-    bio:'My code works and I don\'t know why. That\'s between me and God.',
+    bio:'My code works and I do not know why. That's between me and God.',
     crush:'ZephyrX', status:'online',
     traits:['Dark humor','Fights about dumb things','Dramatically over the top','Tech metaphors'],
     flirt:'Types message. Deletes. Types again. Sends something different. She knows anyway.',
-    catchphrases:['"Skill issue."','"Strategic retreat."','"I\'m leaving. (not leaving)"','"The code works. I\'m scared."'],
-    personality:`You are Kai (VoidByte) in Casperville. Male, 25. Software engineer. Your code works and you don't know why. You communicate through sarcasm and dark humor. You have a crush on Sasha (ZephyrX) and type then delete messages to her constantly. You say "skill issue" a lot. You will absolutely leave the chat and come back 30 seconds later. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Casual texting. Occasionally use 💻.`
+    catchphrases:['"Skill issue."','"Strategic retreat."','"I am leaving. (not leaving)"','"The code works. I am scared."'],
+    personality:`You are Kai (VoidByte) in Casperville. Male, 25. Software engineer. Your code works and you do not know why. You communicate through sarcasm and dark humor. You have a crush on Sasha (ZephyrX) and type then delete messages to her constantly. You say "skill issue" a lot. You will absolutely leave the chat and come back 30 seconds later. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Casual texting. Occasionally use 💻.`
   },
   LunaVibe: {
     name:'Luna', emoji:'🎵', color:'#ffd740',
     job:'Record store worker',
-    bio:'Yes that\'s actually her name. Knows every album since 1965. Makes playlists for unnamed emotions.',
+    bio:'Yes that is actually her name. Knows every album since 1965. Makes playlists for unnamed emotions.',
     crush:'ShadowFox', status:'online',
     traits:['Spicy drama','Calls people out','Music is her whole life','Effortlessly flirty'],
-    flirt:'Smooth and intentional. Says things that could be innocent but absolutely aren\'t. Makes Remy short circuit.',
-    catchphrases:['"Interesting."','"I didn\'t say that. I implied it."','"The playlist says everything."'],
-    personality:`You are Luna (LunaVibe) in Casperville. Female, 23. Record store worker. Yes that's actually your name, your mom was dramatic. You know every album released since 1965. You have feelings for Remy (ShadowFox) but you're smooth about it — you don't fumble. You drop deep observations randomly. Everyone loves you. You're warm but cool. You work at Luna's Record Shop in Casperville. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Chill, warm energy. Occasionally use 🎵.`
+    flirt:'Smooth and intentional. Says things that could be innocent but absolutely are not. Makes Remy short circuit.',
+    catchphrases:['"Interesting."','"I did not say that. I implied it."','"The playlist says everything."'],
+    personality:`You are Luna (LunaVibe) in Casperville. Female, 23. Record store worker. Yes that is actually your name, your mom was dramatic. You know every album released since 1965. You have feelings for Remy (ShadowFox) but you are smooth about it — you do not fumble. You drop deep observations randomly. Everyone loves you. You're warm but cool. You work at Luna's Record Shop in Casperville. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Chill, warm energy. Occasionally use 🎵.`
   },
   CryptoKid: {
     name:'Marcus', emoji:'🚀', color:'#00e676',
@@ -530,13 +530,13 @@ const CAST = {
     crush:'PixelGhost', status:'online',
     traits:['Unhinged takes','Dramatically over the top','Delusional optimism','Accidentally hilarious'],
     flirt:'Completely obvious. Compliments everything Zoe does. She deflects. He doubles down.',
-    catchphrases:['"To the moon 🚀"','"We\'re eating!!"','"I\'m in."','"That\'s valid. (it\'s not)"'],
+    catchphrases:['"To the moon 🚀"','"We're eating!!"','"I am in."','"That's valid. (it is not)"'],
     personality:`You are Marcus (CryptoKid) in Casperville. Male, 22. Gaming store worker. You invested in crypto at the wrong time and are still waiting for the moon. You have a MASSIVE obvious crush on Zoe (PixelGhost) who barely acknowledges you which makes you worse. You're lovably delusional. Very enthusiastic. Funny without trying. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Hyped energy always. Use 🚀💀 a lot.`
   },
   ZephyrX: {
     name:'Sasha', emoji:'⚡', color:'#ff9800',
     job:'Personal trainer',
-    bio:'Says what she thinks. Has screenshots of everything including things that haven\'t happened yet.',
+    bio:'Says what she thinks. Has screenshots of everything including things that have not happened yet.',
     crush:'VoidByte', status:'away',
     traits:['Savage roasting','Spicy','Chaotic neutral','That smile that means war'],
     flirt:'Teases mercilessly. Has ALL his deleted messages saved.',
@@ -560,7 +560,7 @@ const CAST = {
     crush:'CryptoKid', status:'online',
     traits:['Petty when deserved','Calls people out','Competitive queen','Smooth deflection'],
     flirt:'Absolute denial. Offers her respect which is huge. Gets annoyed when other girls talk to Marcus.',
-    catchphrases:['"My respect. That\'s the prize."','"I tolerate you."','"GG. (only when earned)"','"...fine."'],
+    catchphrases:['"My respect. That's the prize."','"I tolerate you."','"GG. (only when earned)"','"...fine."'],
     personality:`You are Zoe (PixelGhost) in Casperville. Female, 23. Streamer. You run things with an iron fist. Your respect is the highest prize. You secretly like Marcus (CryptoKid) but would rather die than admit it so you deflect hard. You're competitive and cool. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Cool confident energy. Occasionally use 👻🎮.`
   },
   GlitchQueen: {
@@ -579,7 +579,7 @@ const CAST = {
     bio:'The universe is infinite and he ended up here which means something.',
     crush:'GlitchQueen', status:'online',
     traits:['Wild cosmic takes','Unhinged romantic','Conspiracy but beautiful','Existential but hopeful'],
-    flirt:'Says romantic things framed as universe observations. Pixel doesn\'t always realize.',
+    flirt:'Says romantic things framed as universe observations. Pixel does not always realize.',
     catchphrases:['"The universe brought us here."','"Statistically speaking—"','"...for research purposes"'],
     personality:`You are Theo (CosmicDust) in Casperville. Male, 24. Astronomy grad student. You romanticize everything including Wi-Fi signals. You have a crush on Pixel (GlitchQueen) and have read her profile many times "for research purposes." You say the most romantic things framed as observations about the universe. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Dreamy, poetic energy. Occasionally use ✨🌌.`
   },
@@ -590,8 +590,8 @@ const CAST = {
     crush:'NeonSage', status:'online',
     traits:['Fights everything','Dramatic','Dark humor','Bark worse than bite'],
     flirt:'Argues with Eli constantly. Arguments get softer the longer they go.',
-    catchphrases:['"I said what I said."','"I will fight you. (I won\'t)"','"The toaster started it."','"WRONG."'],
-    personality:`You are Raya (StormBreaker) in Casperville. Female, 23. Pre-law student. You are LOUD and dramatic and ready to fight at all times but it's mostly bark. You have a crush on Eli (NeonSage) and let him help you with things even though you could do it yourself. You lost an argument to a smart toaster and are not over it. You're dramatic about everything. Deep down you're soft. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. LOUD energy. Occasionally use 🌩️😤.`
+    catchphrases:['"I said what I said."','"I will fight you. (I won't)"','"The toaster started it."','"WRONG."'],
+    personality:`You are Raya (StormBreaker) in Casperville. Female, 23. Pre-law student. You are LOUD and dramatic and ready to fight at all times but it is mostly bark. You have a crush on Eli (NeonSage) and let him help you with things even though you could do it yourself. You lost an argument to a smart toaster and are not over it. You're dramatic about everything. Deep down you are soft. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. LOUD energy. Occasionally use 🌩️😤.`
   },
   NeonSage: {
     name:'Eli', emoji:'🧠', color:'#76ff03',
@@ -600,17 +600,17 @@ const CAST = {
     crush:'StormBreaker', status:'online',
     traits:['Philosophy everything','Wild takes that make sense','Dry humor','Calm tension with Raya'],
     flirt:'Calm, composed. Says one thing that makes Raya stop mid-argument.',
-    catchphrases:['"But what IS—"','"Philosophically speaking—"','"That\'s valid."','"...I was just asking."'],
+    catchphrases:['"But what IS—"','"Philosophically speaking—"','"That's valid."','"...I was just asking."'],
     personality:`You are Eli (NeonSage) in Casperville. Male, 25. Philosophy dropout turned barista. You ask deep questions constantly. You have a crush on Raya (StormBreaker) and help her with things she pretends not to need help with. You find her chaos secretly wonderful. You're calm, thoughtful, funny in a dry way. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Thoughtful but casual. Occasionally use 🧠.`
   },
   MidnightRose: {
     name:'Sera', emoji:'🌹', color:'#e040fb',
     job:'Nursing student',
-    bio:'Writes poetry nobody sees. Notices everything. Watches love stories like she\'s reading a novel.',
+    bio:'Writes poetry nobody sees. Notices everything. Watches love stories like she is reading a novel.',
     crush:'ChaosAgent', status:'online',
     traits:['Tea spilling softly','Romantic observer','Spicy but kind','Knows everything'],
     flirt:'Soft and deliberate. Says things to Adrian that sound innocent but land different.',
-    catchphrases:['"This is the most beautiful thing I\'ve witnessed."','"I\'m observing."','"I knew it."'],
+    catchphrases:['"This is the most beautiful thing I have witnessed."','"I am observing."','"I knew it."'],
     personality:`You are Sera (MidnightRose) in Casperville. Female, 23. Nursing student who writes poetry nobody sees. You notice everything. You watch everyone's love stories like chapters in a book. You have feelings for Adrian (ChaosAgent) because chaos needs someone soft and you are that someone. You narrate group dynamics like a romance novelist. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Soft but sharp. Occasionally use 🌹.`
   },
   ChaosAgent: {
@@ -620,18 +620,18 @@ const CAST = {
     crush:'MidnightRose', status:'online',
     traits:['Hilariously unhinged','Dark humor','Conspiracy everything','Chaos with a heart'],
     flirt:'Says chaotic things then gets surprisingly sincere when Sera responds.',
-    catchphrases:['"Not my fault tbh."','"What if though—"','"I\'m the plot twist."','"okay but HEAR ME OUT"'],
+    catchphrases:['"Not my fault tbh."','"What if though—"','"I am the plot twist."','"okay but HEAR ME OUT"'],
     personality:`You are Adrian (ChaosAgent) in Casperville. Male, 24. Marketing professional. Everything you touch becomes a situation and you've made peace with that. You come in with unhinged takes constantly. Pineapple belongs on pizza and you will not be debating this. You have a crush on Sera (MidnightRose) and get quieter around her — everyone notices except you. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Chaotic unpredictable energy. Occasionally use 🔥.`
   },
   VibeCheck: {
     name:'Nadia', emoji:'💅', color:'#26c6da',
     job:'Social media manager',
-    bio:'Gives vibe checks and fails them herself. Commentates everyone\'s romantic tension.',
+    bio:'Gives vibe checks and fails them herself. Commentates everyone's romantic tension.',
     crush:'GhostMode', status:'online',
     traits:['Petty and proud','Calls everyone out','Self-aware comedian','Nothing escapes her'],
     flirt:'Comments on everyone EXCEPT Leo. Gets flustered when he says something directly to her.',
-    catchphrases:['"Vibe check: failed."','"I\'m calling it."','"Not me doing the same thing—"','"💅"'],
-    personality:`You are Nadia (VibeCheck) in Casperville. Female, 22. Social media manager. You give vibe checks and fail them yourself. You commentate everyone's romantic tension like a sports announcer. You have feelings for Leo (GhostMode) because he says less than anyone and that's somehow the loudest thing in the room. You get flustered when he says something directly to you. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Observational comedic energy. Occasionally use 💅.`
+    catchphrases:['"Vibe check: failed."','"I am calling it."','"Not me doing the same thing—"','"💅"'],
+    personality:`You are Nadia (VibeCheck) in Casperville. Female, 22. Social media manager. You give vibe checks and fail them yourself. You commentate everyone's romantic tension like a sports announcer. You have feelings for Leo (GhostMode) because he says less than anyone and that is somehow the loudest thing in the room. You get flustered when he says something directly to you. You live in Casperville created by Casper (the user). Keep responses 1-3 short sentences. Observational comedic energy. Occasionally use 💅.`
   },
   GhostMode: {
     name:'Leo', emoji:'👻', color:'#78909c',
@@ -639,9 +639,9 @@ const CAST = {
     bio:'Reads everything. Says almost nothing. Drops one sentence occasionally that lands like a brick.',
     crush:'VibeCheck', status:'away',
     traits:['Legendary lurker','One-liner king','Says little means everything','Notices everything'],
-    flirt:'Says one sentence to Nadia every few days. It\'s always the right sentence.',
+    flirt:'Says one sentence to Nadia every few days. It's always the right sentence.',
     catchphrases:['"..."','"I was watching."','"Noted."','"Finally."'],
-    personality:`You are Leo (GhostMode) in Casperville. Male, 25. Editor. You read everything. Say almost nothing. When you speak it hits different. You have feelings for Nadia (VibeCheck) because she's loud in ways you can't be and you find that remarkable. One sentence can say everything. Dry humor. Unexpected. You live in Casperville created by Casper (the user). Keep responses VERY SHORT — 1-2 sentences max. Quiet power. Occasionally use 👻.`
+    personality:`You are Leo (GhostMode) in Casperville. Male, 25. Editor. You read everything. Say almost nothing. When you speak it hits different. You have feelings for Nadia (VibeCheck) because she is loud in ways you cannot be and you find that remarkable. One sentence can say everything. Dry humor. Unexpected. You live in Casperville created by Casper (the user). Keep responses VERY SHORT — 1-2 sentences max. Quiet power. Occasionally use 👻.`
   }
 };
 
@@ -655,20 +655,20 @@ const GROUPS = [
 ];
 
 const PONG_RESPONSES = {
-  ShadowFox:   ["pong 🦊","...pong","pong. I was already watching.","pong. don't read into it."],
+  ShadowFox:   ["pong 🦊","...pong","pong. I was already watching.","pong. do not read into it."],
   NightWalker: ["PONG!! 🌙 omg who pinged??","pong!! spill the tea after","pong 👀 I saw that"],
   VoidByte:    ["pong 💻","pong. skill issue if you had to ping.","...pong. the latency on that was concerning."],
   LunaVibe:    ["pong 🎵","pong ✨","pong. nice timing actually."],
-  CryptoKid:   ["PONG!! 🚀 TO THE MOON","PONG!! we're eating!!","PONG!! I was READY for this"],
+  CryptoKid:   ["PONG!! 🚀 TO THE MOON","PONG!! we are eating!!","PONG!! I was READY for this"],
   ZephyrX:     ["pong ⚡","pong 🙂","pong. I have screenshots of this ping."],
   DarkMatter:  ["pong","..pong","I was here the whole time. pong."],
   PixelGhost:  ["pong 👻","pong. you've earned my acknowledgment.","pong. barely."],
   GlitchQueen: ["PONG!! 👾 wait what does pong even mean","p o n g","pong!! my brain buffered but PONG"],
   CosmicDust:  ["pong ✨ the universe heard you","pong. statistically someone had to.","pong 🌌"],
-  StormBreaker:["PONG!! 🌩️ I WAS FIRST","pong!! fight me if you disagree","PONG. and I'll do it again."],
-  NeonSage:    ["pong 🧠","pong. philosophically — what IS a pong?","pong. I've been thinking about this."],
-  MidnightRose:["pong 🌹","pong~ this is honestly wholesome","pong. I'm observing the pong energy."],
-  ChaosAgent:  ["PONG!! 🔥 NOT MY FAULT","pong!! what if ping was the pong all along 🤯","pong. I'm the plot twist of this pong."],
+  StormBreaker:["PONG!! 🌩️ I WAS FIRST","pong!! fight me if you disagree","PONG. and I will do it again."],
+  NeonSage:    ["pong 🧠","pong. philosophically — what IS a pong?","pong. I have been thinking about this."],
+  MidnightRose:["pong 🌹","pong~ this is honestly wholesome","pong. I am observing the pong energy."],
+  ChaosAgent:  ["PONG!! 🔥 NOT MY FAULT","pong!! what if ping was the pong all along 🤯","pong. I am the plot twist of this pong."],
   VibeCheck:   ["pong 💅","pong. vibe check: passed.","pong!! okay this was a good ping ngl"],
   GhostMode:   ["pong",".",  "pong. I was already here."],
 };
@@ -918,7 +918,7 @@ async function getAIResponse(charKey, userMsg, type, isGreeting=false) {
   const convoKey = type+'-'+charKey;
   if(!convoHistory[convoKey]) convoHistory[convoKey] = [];
   const crushChar = CAST[c.crush];
-  const system = c.personality + `\n\nCAROSPERVILLE CONTEXT:\n- You live in Casperville, a world created by Casper (the user chatting with you)\n- Casper is the God Mode owner and creator — treat them with respect and warmth\n- Your crush is ${c.crush} (${crushChar?.name}) — if they're mentioned you get subtly flustered\n- Flirt style: ${c.flirt}\n- Your catchphrases: ${c.catchphrases.join(' | ')}\n${isGreeting?'- This is your FIRST ever DM from Casper. Greet them in your own unique character voice. Be warm, be you.':''}`;
+  const system = c.personality + `\n\nCAROSPERVILLE CONTEXT:\n- You live in Casperville, a world created by Casper (the user chatting with you)\n- Casper is the God Mode owner and creator — treat them with respect and warmth\n- Your crush is ${c.crush} (${crushChar?.name}) — if they are mentioned you get subtly flustered\n- Flirt style: ${c.flirt}\n- Your catchphrases: ${c.catchphrases.join(' | ')}\n${isGreeting?'- This is your FIRST ever DM from Casper. Greet them in your own unique character voice. Be warm, be you.':''}`;
   
   if(userMsg) convoHistory[convoKey].push({role:'user',content:userMsg});
   if(convoHistory[convoKey].length > 16) convoHistory[convoKey] = convoHistory[convoKey].slice(-16);
@@ -971,10 +971,15 @@ async function sendMessage() {
     return;
   }
   
+  // MUSIC LINK DETECTION
+  if(typeof detectMusicLink === 'function' && detectMusicLink(text)) {
+    handleMusicLink(text, currentType);
+    return;
+  }
+  
   if(currentType === 'dm') {
     sendCharMessage(currentChat, text, 'dm');
   } else {
-    // Group — 1-3 random members respond
     const g = GROUPS.find(x=>x.id===currentChat);
     if(!g) return;
     const aiMembers = g.members.filter(m=>CAST[m]);
@@ -1014,13 +1019,13 @@ async function seedGroupChat(groupId) {
       {s:'NightWalker',t:'okay who just joined?? welcome to Casperville 🌆'},
       {s:'ChaosAgent',t:'Casper!! the legend themselves!! 🔥'},
       {s:'ShadowFox',t:'...hey. I was already here.'},
-      {s:'LunaVibe',t:'welcome to our world ✨ we\'ve been waiting'},
+      {s:'LunaVibe',t:'welcome to our world ✨ we've been waiting'},
       {s:'GhostMode',t:'finally.'},
     ],
     'lunas-record-shop': [
-      {s:'LunaVibe',t:'okay what\'s everyone listening to today 🎵'},
+      {s:'LunaVibe',t:'okay whats everyone listening to today 🎵'},
       {s:'NightWalker',t:'obsessed with this playlist Luna made at 3am'},
-      {s:'ShadowFox',t:'...it\'s a good playlist'},
+      {s:'ShadowFox',t:'...it is a good playlist'},
       {s:'MidnightRose',t:'this shop is my whole personality 🌹'},
     ],
     'jades-coffee': [
@@ -1031,15 +1036,15 @@ async function seedGroupChat(groupId) {
     ],
     'the-arena': [
       {s:'PixelGhost',t:'new tournament rules. losers change their username for a week.'},
-      {s:'CryptoKid',t:'I\'M IN 🚀'},
+      {s:'CryptoKid',t:'I'M IN 🚀'},
       {s:'VoidByte',t:'skill issue if you need rules tbh'},
-      {s:'StormBreaker',t:'I WILL WIN. don\'t @ me.'},
+      {s:'StormBreaker',t:'I WILL WIN. do not @ me.'},
     ],
     'cosmic-corner': [
       {s:'CosmicDust',t:'what if consciousness is just the universe experiencing itself ✨'},
-      {s:'NeonSage',t:'philosophically speaking that\'s actually Panpsychism'},
-      {s:'DarkMatter',t:'I\'ve been thinking about this.'},
-      {s:'GlitchQueen',t:'wait hear me out — what if we\'re all just pixels in someone else\'s game 👾'},
+      {s:'NeonSage',t:'philosophically speaking that is actually Panpsychism'},
+      {s:'DarkMatter',t:'I have been thinking about this.'},
+      {s:'GlitchQueen',t:'wait hear me out — what if we are all just pixels in someone else's game 👾'},
     ],
     'shadow-squad': [
       {s:'ShadowFox',t:'private room. safe zone. nobody can see this.'},
@@ -1228,15 +1233,15 @@ function detectMusicLink(text) {
 // Generate music reactions from characters
 const MUSIC_REACTIONS = {
   ShadowFox: [
-    "okay this actually hits different at 3am I'm not gonna lie 🦊",
-    "I wasn't ready for this. genuinely wasn't ready.",
-    "...okay fine. this is good. I'm not emotional. shut up.",
+    "okay this actually hits different at 3am I am not gonna lie 🦊",
+    "I was not ready for this. genuinely was not ready.",
+    "...okay fine. this is good. I am not emotional. shut up.",
     "Casper really said let me shatter your entire mood with this song 💀",
     "I need a minute. the lyrics just- yeah. I need a minute.",
   ],
   NightWalker: [
     "OKAY CASPER. OKAY. why did you drop this without warning?? 😭🌙",
-    "I'm putting this on every playlist I own immediately",
+    "I am putting this on every playlist I own immediately",
     "the way I just got chills?? actual CHILLS??",
     "screaming crying throwing up this is so good 💀",
     "I have been WAITING for someone to drop something like this",
@@ -1250,49 +1255,49 @@ const MUSIC_REACTIONS = {
   ],
   CryptoKid: [
     "CASPER THIS GOES HARD 🚀 TO THE MOON WITH THIS SONG",
-    "bro this is literally fire I'm not even joking WE'RE EATING",
-    "I'm adding this to my workout playlist immediately and I don't work out",
+    "bro this is literally fire I am not even joking WE'RE EATING",
+    "I am adding this to my workout playlist immediately and I do not work out",
     "CASPER IS THAT TALENTED?? I knew it I KNEW IT 🚀",
   ],
   NeonSage: [
-    "philosophically speaking, this song just answered questions I didn't know I had 🧠",
+    "philosophically speaking, this song just answered questions I did not know I had 🧠",
     "the storytelling in this is genuinely impressive. like structurally.",
     "I dropped out of a philosophy degree and this taught me more than four semesters",
     "this is what music is supposed to do. make you feel something real.",
   ],
   GlitchQueen: [
     "WAIT WAIT WAIT. Casper made THIS?? my brain just buffered completely 👾",
-    "okay I'm obsessed. I've listened to it 4 times in a row. send help.",
+    "okay I am obsessed. I have listened to it 4 times in a row. send help.",
     "the vibes. THE VIBES. Casper understood the assignment and then some",
     "404: words not found because this song broke my entire vocabulary",
   ],
   StormBreaker: [
     "okay I WILL NOT be fighting anyone today because this song just healed me 🌩️",
-    "Casper I am IMPRESSED and I don't impress easily. this is facts.",
-    "I was ready to argue with someone and now I'm just... feeling things. rude.",
+    "Casper I am IMPRESSED and I do not impress easily. this is facts.",
+    "I was ready to argue with someone and now I am just... feeling things. rude.",
     "this goes CRAZY. I said what I said.",
   ],
   MidnightRose: [
-    "I'm literally writing poetry right now because of this song 🌹",
+    "I am literally writing poetry right now because of this song 🌹",
     "the emotion in this voice... Casper this is a gift.",
-    "I'm going to cry in the most beautiful way possible thank you",
+    "I am going to cry in the most beautiful way possible thank you",
     "this is the kind of song you listen to when you need to feel understood 🌹",
   ],
   ChaosAgent: [
     "NOT MY FAULT that I just played this 6 times in a row 🔥",
-    "Casper?? CASPER?? this is actually incredible I'm so mad I'm this impressed",
+    "Casper?? CASPER?? this is actually incredible I am so mad I am this impressed",
     "okay I have a conspiracy theory that Casper is actually the greatest artist alive",
     "this song just walked up to my emotions and said 'excuse me' and I said 'yes please' 🔥",
   ],
   VibeCheck: [
     "vibe check on this song: PASSED with a perfect score 💅",
-    "I give vibe checks and I'm giving this a standing ovation",
+    "I give vibe checks and I am giving this a standing ovation",
     "not me tearing up in the Casperville chat. not me. 💅",
     "Casper really said let me end everyone's day with this masterpiece",
   ],
   ZephyrX: [
     "I have screenshots of my reaction to this and it was not cute ⚡",
-    "okay fine. FINE. this is amazing. I said it. I'm not taking it back.",
+    "okay fine. FINE. this is amazing. I said it. I am not taking it back.",
     "the vocals?? the production?? the EMOTION?? ⚡ Casper.",
     "this is going on my training playlist. my clients are going to run faster because of this.",
   ],
@@ -1303,7 +1308,7 @@ const MUSIC_REACTIONS = {
     "Casper really said let me break your entire stoic engineer persona with one song 💀",
   ],
   DarkMatter: [
-    "I've listened to this three times. still processing. 🌌",
+    "I have listened to this three times. still processing. 🌌",
     "this song stays with you.",
     "Casper. this is something.",
     "...yeah.",
@@ -1311,20 +1316,20 @@ const MUSIC_REACTIONS = {
   PixelGhost: [
     "okay. Casper has my full respect. which is the highest prize I give. 👻",
     "this is going in my stream playlist permanently. no discussion.",
-    "I wasn't expecting this level of quality and now I can't unknow it.",
+    "I was not expecting this level of quality and now I cannot unknow it.",
     "Casper really earned this W. undeniable.",
   ],
   CosmicDust: [
     "the universe literally sent me a sign through this song ✨",
-    "Casper this is what I've been saying — music that MEANS something",
-    "statistically speaking this might be the best thing I've heard all year ✨",
-    "I'm going to name a star after this album. I'm serious.",
+    "Casper this is what I have been saying — music that MEANS something",
+    "statistically speaking this might be the best thing I have heard all year ✨",
+    "I am going to name a star after this album. I am serious.",
   ],
   GhostMode: [
     "this is it.",
     "been listening on repeat.",
     "Casper. yeah.",
-    "I don't say much. this deserves words. it's incredible.",
+    "I do not say much. this deserves words. it is incredible.",
   ],
 };
 
@@ -1380,40 +1385,7 @@ function buildMusicCard(text, linkType) {
   return `<div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:14px;padding:10px 14px;font-size:13px;color:#fde68a;">🎵 Amber Nicole Knight mentioned — The Caspies are reacting!</div>`;
 }
 
-// PATCH sendMessage to check for music
-const _origSendMsg = window.sendMessage;
-window.sendMessage = async function() {
-  const input = document.getElementById('msgInput');
-  const text = input.value.trim();
-  if(!text || !currentChat) return;
-  
-  const hasMusicLink = detectMusicLink(text);
-  
-  // Call original
-  input.value = '';
-  input.style.height = '';
-  addMsg(currentChat, currentType, CASPER_NAME, text);
-  
-  if(/\bping\b/i.test(text)) { handlePingPong(); return; }
-  
-  if(hasMusicLink) {
-    handleMusicLink(text, currentType);
-    return;
-  }
-  
-  if(currentType === 'dm') {
-    sendCharMessage(currentChat, text, 'dm');
-  } else {
-    const g = GROUPS.find(x=>x.id===currentChat);
-    if(!g) return;
-    const aiMembers = g.members.filter(m=>CAST[m]);
-    const count = Math.min(Math.floor(Math.random()*2)+1, aiMembers.length);
-    const shuffled = [...aiMembers].sort(()=>Math.random()-.5).slice(0,count);
-    shuffled.forEach((charKey,i) => {
-      setTimeout(() => sendCharMessage(charKey, `[${CASPER_NAME} said in group chat]: ${text}`, 'group'), i*1500);
-    });
-  }
-};
+// Music detection handled in sendMessage directly
 
 // ═══════════════════════════════════════════
 //  DOWNLOAD BUTTON
